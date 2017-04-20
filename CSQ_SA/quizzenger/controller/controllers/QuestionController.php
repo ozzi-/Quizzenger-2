@@ -15,7 +15,7 @@ namespace quizzenger\controller\controllers {
 		}
 
 		public function render(){
-			$this->questionID= $this->request ['id'];
+			$this->questionID= intval($this->request ['id']);
 
 			$this->loadQuestionInfoView();
 			$this->loadMainView();
