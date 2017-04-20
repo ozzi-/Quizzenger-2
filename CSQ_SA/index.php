@@ -19,6 +19,12 @@
 	} else {
 		$controller = new Controller ( $request,$log );
 	}
+	
+	// Security Headers
+	header('X-XSS-Protection: 1; mode=block');
+	header('Strict-Transport-Security: max-age=2592000');
+	header('X-Frame-Options: DENY');
+	header("Content-Security-Policy: default-src 'self'; style-src  'self' 'unsafe-inline';");
 
 	echo $controller->render();
 
